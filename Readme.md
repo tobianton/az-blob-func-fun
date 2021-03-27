@@ -19,18 +19,22 @@ How to run this mother: </br>
 voilà -> your environment should be in place. PS: You might have to run it twice as you can get at 403 when you try to create the secrets (Access Policies might take a few min to register).</br>
 </br>
 </br>
+
 2) CD into the FunkyBlob dir and upload the AZ-func to the newly created az-func (demo-funky-app) through Visual Studi. In a production environment I'd build and release the app through DevOps, but for this simple proof of concept I'm allowing myself some leniency and just uploading it through vs-code AZ-func extension. In advance: Sorry (but I can provide you some build yamls should you crave any!) :)</br>
 To publish you right click the project and select Publish (target=Azure & Az func app (windows)). Find the func-app we just Terraformed (demo-funky-app) in your subscription and upload the func!
 The secrets needed to run this mother should already be injected into the runtime environment through the func appsetting-block with @Microsoft.KeyVault references. RBAC gives the func-app access to the KV.</br>
 </br>
 </br>
+
 3) Monitor the Func app from the AZ-portal -> as I'm not actually sending an email all you'll see is a logging entry of from the SendEmail-func.</br>
 </br>
 </br>
+
 4) Run the file_upload_app with "docker-compose up" from the ./file_upload_app directory. This uploads my beautiful poem to the blob (which should trigger the AZ-func and "send" a synthetic email).
 Prior to running the app you need to update the storageAccKey .env-variable in the ./file_upload_app/.env-file. From the keyfault.tf you have access to the vault, so I could have made a get_secret func and piggybacked off your credentials, but since it's docker-compose I prefered to do a .env-injection because why not?</br>
 </br>
 </br>
+
 5) Hopefully all of the above worked out just fine. If that is the case then from the .Terraform dir a ./terranuke ./ remains and we can enjoy the rest of our weekend!
 
 ![Alt text](img/success.JPG?raw=true)

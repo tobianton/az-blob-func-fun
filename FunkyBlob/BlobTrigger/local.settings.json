@@ -1,0 +1,10 @@
+{
+    "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "smtpUID": "***RandomStr***",
+    "smtpPWD": "***RandomStr***",
+    "blobConnectionString": "DefaultEndpointsProtocol=https;AccountName=***AccName***;AccountKey=**PrimAccKey**;EndpointSuffix=core.windows.net"
+  }
+}

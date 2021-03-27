@@ -60,9 +60,9 @@ resource "azurerm_function_app" "demo_funky_app" {
     "APPINSIGHTS_INSTRUMENTATIONKEY"  = azurerm_application_insights.demo_func_ins.instrumentation_key
     "WEBSITE_ENABLE_SYNC_UPDATE_SITE" = "true"
     "WEBSITE_RUN_FROM_PACKAGE"        = "1"
-    "smtpUID"                         = "@Microsoft.KeyVault(VaultName=demo-funky-kv;SecretName=smtpUID)"
-    "smtpPWD"                         = "@Microsoft.KeyVault(VaultName=demo-funky-kv;SecretName=smtpPWD)"
-    "blobConnectionString"            = "@Microsoft.KeyVault(VaultName=demo-funky-kv;SecretName=blobConnectionString)"
+    "smtpUID"                         = "@Microsoft.KeyVault(VaultName=demo-funkeh-kv;SecretName=smtpUID)"
+    "smtpPWD"                         = "@Microsoft.KeyVault(VaultName=demo-funkeh-kv;SecretName=smtpPWD)"
+    "blobConnectionString"            = "@Microsoft.KeyVault(VaultName=demo-funkeh-kv;SecretName=blobConnectionString)"
   }
 
   depends_on = [azurerm_key_vault_secret.data_lake_prim_con_str_secret]

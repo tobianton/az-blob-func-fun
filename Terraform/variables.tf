@@ -12,9 +12,7 @@
 ### Set the Azure Provider ###
 provider "azurerm" {
   version = "=2.48.0"
-  features {
-      key_vault {purge_soft_delete_on_destroy = true}
-  }
+  features {}
 }
 
 
